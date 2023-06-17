@@ -1,0 +1,22 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'loginstyle.css' %}">
+    <title>Signin</title>
+
+
+</head>
+<body>
+<div class="container">
+<h1>Login Here</h1>
+
+    <form method="post" >
+        {% csrf_token%}
+        {{form.as_p}}
+        <input class="button" type="submit" value="login" >
+    </form>
+
+</div>
+</body>
+</html>

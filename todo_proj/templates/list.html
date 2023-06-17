@@ -1,0 +1,54 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="{% static 'liststyle.css' %}">
+    <title>Title</title>
+</head>
+<body >
+    <h1>Task List</h1>
+    <div>
+        <h2>hello! {{user.username | title}}</h2>
+    </div>
+
+    <a  href="{% url 'task_Create' %}"  style="margin-left:400px;" > Add Task </a>
+
+<table >
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Completed</th>
+        <th>Created</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+
+   <div class="task-items-wrapper">
+    {% for tasks in task %}
+    <tr style="height:50px;">
+        <td align="middle">{{tasks.id}}</td>
+        <td>{{tasks.title}}</td>
+        <td align="middle">{{tasks.description}}</td>
+        <td align="middle">{{tasks.completed}}</td>
+        <td align="middle">{{tasks.created}}</td>
+
+
+        <td style="width:1%; height:2px; align:center;"  ><a href="{% url 'task_update' tasks.id%}"><i  class="fa fa-edit"></i></a></td>
+        <td style="width:1%; height:2px;"> <a href="{% url 'task_delete' tasks.id%}"><i class="fa fa-trash"></i></a></td>
+
+    </tr>
+       {% endfor%}
+
+    </div>
+</table>
+    <div class="header-box">
+            {% if request.user.is_authenticated %}
+            <a  href="{% url 'logout' %}">Logout</a>
+             {% else %}
+             <a href="{% url 'login' %}">Login</a>
+             {% endif %}
+        </div>
+</body>
+</html>

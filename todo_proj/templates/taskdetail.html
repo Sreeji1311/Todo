@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Task Details</h1>
+<form method="post" action="">
+  <h2>Tasks: {{task}}</h2>
+  {% if tasks.completed %} Completed {% else %} Pending {% endif %}
+
+</form>
+<a href="{% url 'task' %}">Go back</a>
+</body>
+</html>

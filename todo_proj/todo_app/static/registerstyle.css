@@ -1,0 +1,70 @@
+
+body{
+     background:url('V.jpg')  no-repeat center fixed;
+   background-size: cover;
+   font-size: 12px;
+   height:100px;
+}
+form{
+   position: relative;
+   padding: 4rem;
+   background:transparent;
+   max-width:400;
+   margin:50px auto 0;
+   border-radius:3px;
+   box-shadow:10px 10px 5px 12px #8c8888;
+   font-family: cursive;
+   vertical-align:bottom;
+   margin-top:100px;
+   margin-left:1000px;
+
+}
+h1{
+   text-align:center;
+   font-size:30px;
+   margin:0 0 50px 0;
+   border-bottom:solid;
+}
+p{
+   padding:20px;
+   margin:0 0 3rem 0;
+   position:relative;
+   font-size:15px
+}
+input {
+    display: block;
+    width: 90%;
+    outline: none;
+    margin:10px;
+    height:50px;
+
+  }
+ input[type="submit"] {
+    background: #778899;
+    box-shadow: 0 3px 0 0 darken($button, 10%);
+    border-radius: 2px;
+    border: none;
+    color: black;
+    cursor: pointer;
+    pointer-events:auto;
+    display: block;
+    font-size: 2em;
+    outline: none;
+    padding: .8em 0;
+    text-shadow: 0 1px #68B25B;
+}
+input[type="submit"]:hover {
+    transform: scale(0.9);
+}
+label{
+
+    left: 8px;
+    top: 12px;
+    color: #2C3E50;
+    font-size: 16px;
+    display: inline-block;
+    padding: 4px 10px;
+    font-weight: 400;
+    background-color: #F8F9F9;
+
+}
